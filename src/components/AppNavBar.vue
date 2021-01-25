@@ -13,8 +13,8 @@
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CATEGORIES</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="/photos">PHOTOS</a>
-                      <a class="dropdown-item" href="/videos">VIDEOS</a>
+                      <router-link class="dropdown-item" href="/photos">PHOTOS</router-link>
+                      <router-link class="dropdown-item" href="/videos">VIDEOS</router-link>
                     </div>
                 </li>
             </ul>
