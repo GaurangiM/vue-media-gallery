@@ -214,3 +214,7 @@ h5 {
 #filters a:hover {
     text-decoration: none;
 }
+
+.md-form {
+    margin-top: 0;
+}
