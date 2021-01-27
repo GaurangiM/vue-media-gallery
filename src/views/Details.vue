@@ -39,7 +39,7 @@
                         <div class="overlay">
                             <p>
                                 <router-link to="/details">
-                                    <a  @click="savePhoto(randomPhotoBook[0])">DETAILS</a>
+                                    <a href="/details" @click="savePhoto(randomPhotoBook[0])">DETAILS</a>
                                 </router-link>
                                 
                             </p>
