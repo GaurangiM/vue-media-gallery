@@ -35,7 +35,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[6].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <a href="/details" @click="savePhoto(randomPhotoBook[6])">DETAILS</a>
+                                <router-link to="/details" @click="savePhoto(randomPhotoBook[6])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -46,7 +46,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[8].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <a href="/details" @click="savePhoto(randomPhotoBook[8])">DETAILS</a>
+                                <router-link to="/details" @click="savePhoto(randomPhotoBook[8])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -57,7 +57,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[3].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <a href="/details" @click="savePhoto(randomPhotoBook[3])">DETAILS</a>
+                                <router-link to="/details" @click="savePhoto(randomPhotoBook[3])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
