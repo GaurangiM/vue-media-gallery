@@ -57,7 +57,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[3].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <router-link to="/details" @click="savePhoto(randomPhotoBook[3])">DETAILS</router-link>
+                                <router-link to="/details" @click.native="savePhoto(randomPhotoBook[3])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
