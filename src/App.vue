@@ -6,7 +6,6 @@
         mode="out-in">
         <router-view/>
       </transition>
-      <AppFooter></AppFooter>
     </div>
       
   </div>
@@ -14,12 +13,10 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import AppFooter from '@/components/AppFooter.vue'
 import AppNavBar from '@/components/AppNavBar.vue'
 
 @Component({
   components: {
-    AppFooter,
     AppNavBar
   }
 })
