@@ -39,7 +39,7 @@
                     <img :src="randomVideoBook[6].image" class="img-responsive">
                         <div class="overlay">
                             <p>
-                                <a href="/videodetails" @click="saveVideo(randomVideoBook[6])">DETAILS</a>
+                                <router-link to="/videodetails" @click="saveVideo(randomVideoBook[6])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -50,7 +50,7 @@
                     <img :src="randomVideoBook[7].image" class="img-responsive">
                         <div class="overlay">
                             <p>
-                                <a href="/videodetails" @click="saveVideo(randomVideoBook[7])">DETAILS</a>
+                                <router-link to="/videodetails" @click="saveVideo(randomVideoBook[7])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -61,7 +61,7 @@
                     <img :src="randomVideoBook[9].image" class="img-responsive">
                         <div class="overlay">
                             <p>
-                                <a href="/videodetails" @click="saveVideo(randomVideoBook[9])">DETAILS</a>
+                                <router-link to="/videodetails" @click="saveVideo(randomVideoBook[9])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
