@@ -38,10 +38,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[0].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <router-link to="/details">
-                                    <a href="/details" @click="savePhoto(randomPhotoBook[0])">DETAILS</a>
-                                </router-link>
-                                
+                                <router-link to="/details" @click.native="savePhoto(randomPhotoBook[0])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -52,7 +49,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[1].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <router-link to="/details" @click="savePhoto(randomPhotoBook[1])">DETAILS</router-link>
+                                <router-link to="/details" @click.native="savePhoto(randomPhotoBook[1])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -63,7 +60,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[2].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <router-link to="/details" @click="savePhoto(randomPhotoBook[2])">DETAILS</router-link>
+                                <router-link to="/details" @click.native="savePhoto(randomPhotoBook[2])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
