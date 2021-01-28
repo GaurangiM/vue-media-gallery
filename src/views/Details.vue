@@ -38,7 +38,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[0].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <a href="/details" @click.native="savePhoto(randomPhotoBook[0])">DETAILS</a>
+                                <a href="/details" @click="savePhoto(randomPhotoBook[0])">DETAILS</a>
                             </p>
                         </div>
                 </div>
