@@ -121,13 +121,13 @@ export default class Details extends Vue {
 
     mounted() {
         
-        /*this.photo=JSON.parse(localStorage.getItem("photo")!) ;
+        this.photo=JSON.parse(localStorage.getItem("photo")!) ;
         this.photoWidth=this.photo.width;
 
         this.isLoading=true;
         setTimeout(() => {
           this.isLoading = false;
-        }, 1500);*/
+        }, 1500);
     }
     
     savePhoto(photo: object) {
