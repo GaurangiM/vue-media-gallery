@@ -72,7 +72,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import { createClient } from 'pexels';
 
 @Component
@@ -84,6 +84,17 @@ export default class Details extends Vue {
     isLoading= false;
     fullPage=true;
     loader="spinner";
+
+    @Watch('$route.path')
+    onRouteChange() {
+        this.photo=JSON.parse(localStorage.getItem("photo")!) ;
+        this.photoWidth=this.photo.width;
+
+        this.isLoading=true;
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 1500);
+    }
 
     beforeCreate() {
         const client = createClient(process.env.VUE_APP_APIKEY);
@@ -110,13 +121,13 @@ export default class Details extends Vue {
 
     mounted() {
         
-        this.photo=JSON.parse(localStorage.getItem("photo")!) ;
+        /*this.photo=JSON.parse(localStorage.getItem("photo")!) ;
         this.photoWidth=this.photo.width;
 
         this.isLoading=true;
         setTimeout(() => {
           this.isLoading = false;
-        }, 1500);
+        }, 1500);*/
     }
     
     savePhoto(photo: object) {
