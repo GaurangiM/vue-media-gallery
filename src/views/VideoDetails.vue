@@ -205,7 +205,7 @@
 </style>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
 import { createClient } from 'pexels';
 
 @Component
@@ -216,6 +216,24 @@ export default class VideoDetails extends Vue{
     isLoading= false;
     fullPage=true;
     loader="spinner";
+    videoID= null;
+
+    @Watch('videoID')
+    onIDChange(val: number, oldVal: number) {
+        if(val !== oldVal) {
+            this.video=JSON.parse(localStorage.getItem("video")!) ;
+
+        this.isLoading=true;
+        setTimeout(() => {
+          this.isLoading = false;
+        }, 1500);
+
+        
+    
+        }
+
+        
+    }
 
     mounted() {
         console.log("mounted");
@@ -240,6 +258,8 @@ export default class VideoDetails extends Vue{
     saveVideo(video: object) {
 
         localStorage.setItem("video", JSON.stringify(video));
+        this.videoID= video.id;
+        console.log(this.videoID);
     }
 }
 </script>

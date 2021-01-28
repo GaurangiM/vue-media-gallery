@@ -231,6 +231,7 @@ export default class Photos extends Vue {
     savePhoto(photo: object) {
 
         localStorage.setItem("photo", JSON.stringify(photo));
+    
     }
 
     

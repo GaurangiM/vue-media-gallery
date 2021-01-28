@@ -38,7 +38,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[0].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <a href="/details" @click="savePhoto(randomPhotoBook[0])">DETAILS</a>
+                                <router-link to="/details" @click.native="savePhoto(randomPhotoBook[0])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -49,7 +49,7 @@
                     <img class="img-responsive" :src="randomPhotoBook[1].src.portrait" alt="">
                         <div class="overlay">
                             <p>
-                                <router-link :to="{path:'/details',query: {id: randomPhotoBook[1].id}}" @click.native="savePhoto(randomPhotoBook[1])">DETAILS</router-link>
+                                <router-link :to="{path:'/details'}" @click.native="savePhoto(randomPhotoBook[1])">DETAILS</router-link>
                             </p>
                         </div>
                 </div>
@@ -84,22 +84,31 @@ export default class Details extends Vue {
     isLoading= false;
     fullPage=true;
     loader="spinner";
+    photoID= null;
+    searchKey: any= "";
 
-    @Watch('$route.path')
-    onRouteChange() {
-        this.photo=JSON.parse(localStorage.getItem("photo")!) ;
-        this.photoWidth=this.photo.width;
+    @Watch('photoID')
+    onIDChange(val: number, oldVal: number) {
+        if(val !== oldVal) {
+            this.photo=JSON.parse(localStorage.getItem("photo")!) ;
+            this.photoWidth=this.photo.width;
 
         this.isLoading=true;
         setTimeout(() => {
           this.isLoading = false;
         }, 1500);
+
+        
+    
+        }
+
+        
     }
 
     beforeCreate() {
         const client = createClient(process.env.VUE_APP_APIKEY);
-        const query = 'All';
-        client.photos.curated({ perPage: 15}).then((photos: any) => {
+        const query = 'beer';
+        client.photos.search({ query, perPage: 15}).then((photos: any) => {
             this.photoBook=photos.photos;
             this.randomPhotoBook=this.generateRandomPhotoBook();
         })
@@ -123,17 +132,19 @@ export default class Details extends Vue {
         
         this.photo=JSON.parse(localStorage.getItem("photo")!) ;
         this.photoWidth=this.photo.width;
-
+        this.photoID= this.photo.id;
         this.isLoading=true;
         setTimeout(() => {
           this.isLoading = false;
         }, 1500);
+
     }
     
     savePhoto(photo: object) {
 
         localStorage.setItem("photo", JSON.stringify(photo));
-        this.generateRandomPhotoBook();
+        this.photoID= photo.id;
+        console.log(this.photoID);
     }
 
 }
