@@ -209,7 +209,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
 import { createClient } from 'pexels';
 
 interface Keyable {
-    [key: string]: any  
+    [key: string]: any; 
 }
 
 @Component
