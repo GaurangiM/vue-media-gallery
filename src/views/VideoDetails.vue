@@ -205,8 +205,12 @@
 </style>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import { createClient } from 'pexels';
+
+interface Keyable {
+    [key: string]: any  
+}
 
 @Component
 export default class VideoDetails extends Vue{
@@ -255,7 +259,7 @@ export default class VideoDetails extends Vue{
             .catch(err=> console.log(err));
     }
     
-    saveVideo(video: object) {
+    saveVideo(video: Keyable) {
 
         localStorage.setItem("video", JSON.stringify(video));
         this.videoID= video.id;

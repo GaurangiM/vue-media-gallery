@@ -72,8 +72,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 import { createClient } from 'pexels';
+
+interface Keyable {
+    [key: string]: any  
+};
 
 @Component
 export default class Details extends Vue {
@@ -84,8 +88,10 @@ export default class Details extends Vue {
     isLoading= false;
     fullPage=true;
     loader="spinner";
-    photoID= null;
+    photoID: any= null;
     searchKey: any= "";
+
+    
 
     @Watch('photoID')
     onIDChange(val: number, oldVal: number) {
@@ -140,10 +146,10 @@ export default class Details extends Vue {
 
     }
     
-    savePhoto(photo: object) {
+    savePhoto(savedPhoto: Keyable) {
 
-        localStorage.setItem("photo", JSON.stringify(photo));
-        this.photoID= photo.id;
+        localStorage.setItem("photo", JSON.stringify(savedPhoto));
+        this.photoID= savedPhoto.id;
         console.log(this.photoID);
     }
 
