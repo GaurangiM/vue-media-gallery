@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="row text-center">
-            <video class="video-fluid" autoplay loop muted controls>
+            <video class="video-fluid" autoplay loop muted controls :key="video.id">
                     <source :src="video.video_files[0].link" type="video/mp4" />
             </video>
         </div>
